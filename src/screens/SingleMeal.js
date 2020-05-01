@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import MealContext from '../context/Context';
 import { Ionicons } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const SingleMealScreen = props => {
   const { state, addToOrder } = useContext(MealContext);
@@ -18,10 +19,11 @@ const SingleMealScreen = props => {
       {/* Meal Information and Description */}
       <View style={styles.infoCard}>
         <Text>{meal.title}</Text>
+        
+        <TouchableOpacity>
         <Ionicons name="md-heart" size={32} color="red" />
+        </TouchableOpacity>
         {/* md-heart-empty */}
-
-
       </View>
 
       {/* Order Now button and input for quantity */}

@@ -26,6 +26,11 @@ const mealReducer = (state, action) => {
       return state;
 
     // create set_favorite case that returns the updated state
+    case 'set_favorite':
+      return {
+        ...state, 
+        orders: action.orders
+    };
 
     default:
       return state;
@@ -53,10 +58,13 @@ export const MealProvider = ({ children }) => {
 
   // Add a setFavorite method that updates the favorite property in meal model from false to true
   // mealId should be passed as the parameter and passed through the provider to be accessed
+  const setFavorite = mealId => {
+    dispatch({ type: 'set_favorite', mealId });
+  };
 
   // return provider
   return (
-    <MealContext.Provider value={{ state, addToOrder, getOrders, removeOrder }}>
+    <MealContext.Provider value={{ state, addToOrder, getOrders, removeOrder, setFavorite}}>
       {children}
     </MealContext.Provider>
   );

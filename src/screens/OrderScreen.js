@@ -8,6 +8,7 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
+  TouchableHighlight,
 } from 'react-native';
 
 const OrderScreen = props => {
@@ -31,10 +32,12 @@ const OrderScreen = props => {
                     mealId: itemData.item.id,
                   });
                 }}>
-                <Text style={styles.title}>{itemData.item.title}</Text>
+                <Text style={styles.title}>{itemData.item.title}</Text>  
+                <TouchableOpacity>
                 <Ionicons name="md-heart" size={32} color="red" />
+              </TouchableOpacity>            
+                </TouchableOpacity>
 
-              </TouchableOpacity>
             </View>
           );
         }}
