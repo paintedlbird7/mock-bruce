@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import MealContext from '../context/Context';
+import { Ionicons } from '@expo/vector-icons';
 
 import {
   View,
@@ -31,6 +32,8 @@ const OrderScreen = props => {
                   });
                 }}>
                 <Text style={styles.title}>{itemData.item.title}</Text>
+                <Ionicons name="md-heart" size={32} color="red" />
+
               </TouchableOpacity>
             </View>
           );

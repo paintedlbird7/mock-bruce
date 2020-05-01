@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import MealContext from '../context/Context';
+import { Ionicons } from '@expo/vector-icons';
 
 const SingleMealScreen = props => {
   const { state, addToOrder } = useContext(MealContext);
@@ -17,6 +18,10 @@ const SingleMealScreen = props => {
       {/* Meal Information and Description */}
       <View style={styles.infoCard}>
         <Text>{meal.title}</Text>
+        <Ionicons name="md-heart" size={32} color="red" />
+        {/* md-heart-empty */}
+
+
       </View>
 
       {/* Order Now button and input for quantity */}
