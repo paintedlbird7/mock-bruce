@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { View, Text, StyleSheet, Button, Image, Picker } from 'react-native';
+import { View, Text, StyleSheet, Button, Image, Picker, TouchableOpacity } from 'react-native';
 import MealContext from '../context/Context';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -33,7 +33,10 @@ const SingleMealScreen = props => {
           <Text>{meal.price}</Text>
           
           {/* <Ionicons name="md-heart" size={32} color="red" /> */}
+          <TouchableOpacity>
+          <Ionicons name="md-heart" size={32} color="red" />
           {/* md-heart-empty */}
+          </TouchableOpacity>
         </View>
       </View>
 
