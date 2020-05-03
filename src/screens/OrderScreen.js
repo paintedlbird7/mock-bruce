@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 const OrderScreen = props => {
-  const { state } = useContext(MealContext);
+  const { state, setFavorite } = useContext(MealContext);
   const meals = state.meals;
 
   return (
@@ -28,9 +28,10 @@ const OrderScreen = props => {
               <TouchableOpacity
                 style={styles.card}
                 onPress={() => {
-                  props.navigation.navigate('Single Meal', {
-                    mealId: itemData.item.id,
-                  });
+                  setFavorite(itemData.item)
+                    props.navigation.navigate('Single Meal', {
+                      mealId: itemData.item.id,
+                    });
                 }}>
                 <Text style={styles.title}>{itemData.item.title}</Text>  
                 <TouchableOpacity>

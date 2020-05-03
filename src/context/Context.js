@@ -27,11 +27,17 @@ const mealReducer = (state, action) => {
 
     // create set_favorite case that returns the updated state
     case 'set_favorite':
-      return {
-        ...state, 
-        orders: action.orders
-    };
+      // console.log('onside the reducer with my object', action.meal);
+      //       return state;
 
+      const updatedMeals = state.meals;
+      updatedMeals.forEach(meal => {
+        if (meal.id === action.meal.id) {
+          console.log('matched!');
+          meal.title = 'favorite'
+        }
+      })
+      return { ...state, meals: updatedMeals};
     default:
       return state;
   }
@@ -58,8 +64,9 @@ export const MealProvider = ({ children }) => {
 
   // Add a setFavorite method that updates the favorite property in meal model from false to true
   // mealId should be passed as the parameter and passed through the provider to be accessed
-  const setFavorite = mealId => {
-    dispatch({ type: 'set_favorite', mealId });
+  const setFavorite = meal => {
+    console.log(meal);
+    dispatch({ type: 'set_favorite', meal });
   };
 
   // return provider

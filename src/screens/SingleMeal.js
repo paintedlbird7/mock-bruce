@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { View, Text, StyleSheet, Button, Image, Picker } from 'react-native';
 import MealContext from '../context/Context';
 import { Ionicons } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 // import { Picker } from '@react-native-community/picker';
 
@@ -19,14 +18,6 @@ const SingleMealScreen = props => {
 
   return (
     <View style={styles.container}>
-      {/* Meal Information and Description */}
-      <View style={styles.infoCard}>
-        <Text>{meal.title}</Text>
-        
-        <TouchableOpacity>
-        <Ionicons name="md-heart" size={32} color="red" />
-        </TouchableOpacity>
-        {/* md-heart-empty */}
       <View style={styles.itemContainer}>
         <Image
           style={{ paddingTop: 25 }}
@@ -41,7 +32,7 @@ const SingleMealScreen = props => {
           <Text>{meal.title}</Text>
           <Text>{meal.price}</Text>
           
-          <Ionicons name="md-heart" size={32} color="red" />
+          {/* <Ionicons name="md-heart" size={32} color="red" /> */}
           {/* md-heart-empty */}
         </View>
       </View>
